@@ -44,6 +44,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'semantic-ui-sass', '~> 0.10.1.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
