@@ -18,8 +18,6 @@ group :test do
   gem 'capybara', '2.1.0'
 end
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -44,6 +42,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
+
+gem 'sass-rails'
+gem 'compass-rails'
 gem 'semantic-ui-sass', '~> 0.10.1.0'
 
 # Use ActiveModel has_secure_password
