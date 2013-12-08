@@ -1,6 +1,64 @@
 
 
+<% provide(:hide_header_segment, true) %>
+<% provide(:hide_topbar, true) %>
+<% provide(:hide_sidebar, true) %>
 <% provide(:page_title, 'Login') %>
 
 <h1>User#login</h1>
 <p>Find me in app/views/user/login.html.erb</p>
+
+<div class="ui modal active" style="top: 20%">
+    <div class="header">
+      登入 Emmo
+    </div>
+    <div class="content emmo-pusheen-bg pure-g-r">
+      <div class="pure-u-2-5">
+        <img class="ui medium image" src="http://25.media.tumblr.com/tumblr_m5mlt6a0EH1qhy6c9o1_400.gif">
+      </div>
+      <div class="pure-u-3-5">
+        <div class="ui header">開始記賬吧！</div>
+        
+
+        <div class="ui form segment emmo-pusheen-dark-bg">
+          <div class="field">
+            <label>Username</label>
+            <div class="ui left labeled icon input">
+              <input type="text" placeholder="Username">
+              <i class="user icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <div class="ui left labeled icon input">
+              <input type="password">
+              <i class="lock icon"></i>
+            </div>
+          </div>
+          <div class="ui error message">
+            <div class="header">We noticed some issues</div>
+          </div>
+          <div class="ui buttons">
+            <div class="ui blue submit button">登入</div>
+            <div class="or"></div>
+            <div class="ui red submit button">註冊</div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+    <div class="actions">
+      <!--
+      <div class="ui black button">
+        Cancel
+      </div>
+      <div class="ui positive right labeled icon button">
+        Add Photo
+        <i class="checkmark icon"></i>
+      </div>
+      -->
+    </div>
+  </div>

@@ -1,16 +1,31 @@
 
 
-.emmo-header-segment {
-  @extend .ui;
-  @extend .segment;
 
+$pusheen-bg-color: #fcf0e4;
+
+.emmo-header-segment {
+  
   padding-top: 70px !important;
   margin-top: 0px !important;
 }
 
 .emmo-container {
-  
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.emmo-pusheen-bg {
+  background-color: $pusheen-bg-color !important;
+}
+
+.emmo-pusheen-dark-bg {
+  background-color: shade($pusheen-bg-color, 5%) !important;
+}
+
+
+@media (max-width: 480px) {
+  .emmo-container { 
+    width: 100%;
+  }
 }
