@@ -16,12 +16,31 @@
 
 </head>
 <body>
-
-
-    
 <%= render "layouts/topbar" %>
 
-<%= yield %>
+<div class="emmo-header-segment">
+  <div class="emmo-container">
+    <h2 class="ui header"><%= yield(:page_title) %></h2>
+  </div>
+</div>
+
+<div class="emmo-container">
+
+  <div class="ui celled divided grid">
+    <div class="row">
+      <div class="one wide column">
+      </div>
+      <div class="three wide column">
+        <div class="ui segment">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 </body>
 </html>
