@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Emmo::Application.config.secret_key_base = 'c961800f93edc17633849608b2b206e1a1edc95b1a0b8dafb2cecc1d8df588c846cb6a25d55bcbbf650212cab1e8e70151a90843b12061c5d79af3c26ebf8701'
+
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Emmo::Application.config.secret_key_base = secure_token
