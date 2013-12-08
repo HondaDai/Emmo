@@ -1,17 +1,15 @@
 
 
-@import "semantic-ui";
-@import "pure/grids";
-
 .emmo-header-segment {
   @extend .ui;
-  @extend .segment; 
+  @extend .segment;
 
   padding-top: 70px !important;
   margin-top: 0px !important;
 }
 
 .emmo-container {
+  
   width: 80%;
   margin-left: auto;
   margin-right: auto;
