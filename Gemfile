@@ -47,8 +47,8 @@ end
 
 gem 'sass-rails'
 gem 'compass-rails'
-gem 'semantic-ui-sass', '~> 0.10.1.0'
-gem 'pure-sass'
+#gem 'semantic-ui-sass', '~> 0.10.1.0'
+#gem 'pure-sass'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
