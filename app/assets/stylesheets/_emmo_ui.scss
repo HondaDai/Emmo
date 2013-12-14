@@ -38,6 +38,9 @@ $pusheen-bg-color: #fcf0e4;
   background-color: shade($pusheen-bg-color, 5%) !important;
 }
 
+.emmo-center {
+  margin: auto;
+}
 
 @media (max-width: 480px) {
   .emmo-container { 

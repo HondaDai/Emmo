@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  layout "layouts/pure", :only => [:login, :new, :create]
+  layout "layouts/pure", :only => [:login, :new, :create, :show_create]
 
 
   def login
@@ -19,6 +19,11 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show_create
+    @user = User.new name: "test User"
+    render 'create'
   end
 
   private
