@@ -52,7 +52,7 @@ gem 'semantic-ui-sass', '~> 0.10.1.0'
 
 
 gem 'bcrypt-ruby'
-
+gem 'rails-i18n'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
