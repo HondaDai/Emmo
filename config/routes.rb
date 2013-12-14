@@ -1,6 +1,6 @@
 Emmo::Application.routes.draw do
   get "users/login"
-  get "users/register"
+  get "register" => "users#new"
   get "static_pages/home"
   get "static_pages/help"
 
