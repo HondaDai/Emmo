@@ -1,12 +1,13 @@
 <% if @user.errors.any? then %>
-  <div id="error_explanation">
-    <div class="alert alert-error">
-      The form contains <%= pluralize(@user.errors.count, "error") %>.
+  <div class="ui error message">
+    <% #<i class="close icon"></i> %>
+    <div class="header">
+      <%= "發現了#{@user.errors.count}個錯誤！" %>
     </div>
-    <ul>
-    <% @user.error_messages.each do |msg| %>
-      <li>* <%= msg %></li>
-    <% end %>
+    <ul class="list">
+      <% @user.error_messages.each do |msg| %>
+        <li>* <%= msg %></li>
+      <% end %>
     </ul>
   </div>
 <% end %>
