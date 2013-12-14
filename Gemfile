@@ -47,7 +47,7 @@ end
 
 gem 'sass-rails'
 gem 'compass-rails'
-#gem 'semantic-ui-sass', '~> 0.10.1.0'
+gem 'semantic-ui-sass', '~> 0.10.1.0'
 #gem 'pure-sass'
 
 

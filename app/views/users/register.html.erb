@@ -1,0 +1,70 @@
+
+<% provide(:page_title, 'Register') %>
+
+<%
+  user = User.new name: "honda", email: "s4582123@gmail.com"
+  
+      
+
+%>
+
+<div class="ui modal active emmo-active-model" style="">
+    <div class="header">
+      加入 Emmo
+      <%= gravatar_for user %>
+      <%= user.name %>
+    </div>
+    <div class="content emmo-pusheen-bg pure-g-r">
+      <div class="pure-u-2-5 pure-hidden-phone">
+        <img class="ui medium image" src="http://25.media.tumblr.com/25f09ad6ca2fc491243edc9de9d8a5fd/tumblr_mr8g3qfpr91qhy6c9o1_500.gif">
+      </div>
+      <div class="pure-u-3-5">
+      <%= form_for(@user) do |f| %>
+
+        <div class="ui header">註冊一個新帳號！</div>
+        <div class="ui form segment emmo-pusheen-dark-bg">
+          <div class="field">
+            <label>信箱</label>
+            <div class="ui left labeled icon input">
+              <%= f.text_field :email, placeholder: "您的常用信箱是？" %>
+              <i class="mail icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <label>暱稱</label>
+            <div class="ui left labeled icon input">
+              <%= f.text_field :name, placeholder: "怎麼稱呼您呢？" %>
+              <i class="user icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <label>密碼</label>
+            <div class="ui left labeled icon input">
+              <%= f.password_field :password %>
+              <i class="lock icon"></i>
+            </div>
+          </div>
+          <div class="field">
+            <label>再次輸入密碼</label>
+            <div class="ui left labeled icon input">
+              <%= f.password_field :password_confirmation %>
+              <i class="lock icon"></i>
+            </div>
+          </div>
+          <div class="ui error message">
+            <div class="header">We noticed some issues</div>
+          </div>
+          <div class="ui buttons">
+            <div class="ui green submit button">註冊</div>
+            <div class="or"></div>
+            <a class="ui orange submit button" href="/">登入</a>
+          </div>
+
+        </div>
+
+      <% end %>
+      </div>
+    </div>
+    <div class="actions">
+    </div>
+  </div>

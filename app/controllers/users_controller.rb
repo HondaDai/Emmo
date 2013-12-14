@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
   layout "layouts/pure", :only => [:login, :register]
 
@@ -7,5 +7,6 @@ class UserController < ApplicationController
   end
 
   def register
+    @user = User.new
   end
 end

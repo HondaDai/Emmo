@@ -1,11 +1,8 @@
 
 
-<% provide(:hide_header_segment, true) %>
-<% provide(:hide_topbar, true) %>
-<% provide(:hide_sidebar, true) %>
 <% provide(:page_title, 'Login') %>
 
-<div class="ui modal active" style="top: 20%">
+<div class="ui modal active" style="top: 15%">
     <div class="header">
       登入 Emmo
     </div>
@@ -38,7 +35,7 @@
           <div class="ui buttons">
             <div class="ui blue submit button">登入</div>
             <div class="or"></div>
-            <div class="ui red submit button">註冊</div>
+            <a class="ui red submit button" href="/users/register">註冊</a>
           </div>
 
         </div>

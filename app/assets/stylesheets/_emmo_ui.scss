@@ -1,7 +1,8 @@
 
-
+//@import "semantic-ui";
 
 $pusheen-bg-color: #fcf0e4;
+
 
 .emmo-header-segment {
   
@@ -10,9 +11,23 @@ $pusheen-bg-color: #fcf0e4;
 }
 
 .emmo-container {
+  max-width: 1000px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.emmo-active-model {
+  //@extend .ui;
+  //@extend .model;
+  //@extend .active;
+
+  position: inherit !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .emmo-pusheen-bg {
@@ -26,6 +41,8 @@ $pusheen-bg-color: #fcf0e4;
 
 @media (max-width: 480px) {
   .emmo-container { 
-    width: 100%;
+    width: 95%;
   }
 }
+
+
