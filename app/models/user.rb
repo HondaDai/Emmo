@@ -5,13 +5,12 @@ class User < ActiveRecord::Base
 
   validates :name, 
     presence: true, 
-    length: { maximum: 10 }
+    length: { maximum: 20 }
   validates :email, 
     presence: true, 
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
-  validates :password, 
-    presence: true, 
-    length: { maximum: 20 }
+  validates :password_digest, 
+    presence: true
 
 end
