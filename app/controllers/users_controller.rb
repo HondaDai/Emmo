@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
 
-  layout "layouts/pure", :only => [:login, :new, :create, :show_create]
+  layout "layouts/pure", :only => [:new, :create, :show_create]
 
 
-  def login
-    
-  end
+  
 
   def new
     @user = User.new

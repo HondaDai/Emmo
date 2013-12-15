@@ -3,15 +3,16 @@ Emmo::Application.routes.draw do
   get "static_pages/help"
   get "users/show_create"
 
-  get "login"    => "users#login"
-  get "register" => "users#new"
-  get "home"     => "static_pages#home"
+
+  get  "login"    => "sessions#new"
+  get  "register" => "users#new"
+  get  "home"     => "static_pages#home"
 
 
-
-  root "users#login"
+  root "sessions#new"
 
   resources :users 
+  resources :sessions 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
