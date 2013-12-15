@@ -1,18 +1,17 @@
 Emmo::Application.routes.draw do
-  get "users/login"
-  get "register" => "users#new"
-  get "home" => "static_pages#home"
+  
   get "static_pages/help"
-
   get "users/show_create"
+
+  get "login"    => "users#login"
+  get "register" => "users#new"
+  get "home"     => "static_pages#home"
 
 
 
   root "users#login"
 
-  Rails.application.routes.draw do
-    resources :users 
-  end
+  resources :users 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

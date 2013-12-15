@@ -73,6 +73,14 @@ $light-brown: #B89B78;
   padding: 15px;
 }
 
+.emmo-float-right {
+  float: right
+}
+
+.emmo-float-left {
+  float: left
+}
+
 @media (max-width: 480px) {
   .emmo-container { 
     width: 95%;
