@@ -1,13 +1,22 @@
-<% if @user.errors.any? then %>
+<% if @errors and @errors.any? then %>
   <div class="ui error message">
     <% #<i class="close icon"></i> %>
     <div class="header">
-      <%= "發現了#{@user.errors.count}個錯誤！" %>
+      <%= "發現了#{@errors.count}個錯誤！" %>
     </div>
     <ul class="list">
-      <% @user.error_messages.each do |msg| %>
+      <% @errors.each do |msg| %>
         <li>* <%= msg %></li>
       <% end %>
     </ul>
   </div>
+  <script>
+  $(function(){
+    $('.field:has(.field_with_errors)').addClass('error');
+    $('input').each(function(i, n){
+      if( $(n).parent().is('.field_with_errors') )
+        $(n).unwrap();
+    })
+  })
+  </script>
 <% end %>

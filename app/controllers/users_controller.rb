@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       # Handle a successful save.
     else
+      @errors = @user.error_messages
       render 'new'
     end
   end

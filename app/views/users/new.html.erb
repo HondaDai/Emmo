@@ -3,22 +3,8 @@
 
 <%
   user = User.new name: "honda", email: "s4582123@gmail.com"
-  
-      
-
 %>
 
-
-<script>
-$(function(){
-  $('.field:has(.field_with_errors)').addClass('error');
-  $('input').each(function(i, n){
-    if( $(n).parent().is('.field_with_errors') )
-      $(n).unwrap();
-  })
-})
-
-</script>
 
 <div class="ui modal active emmo-active-model" style="">
     <div class="header">
