@@ -1,8 +1,11 @@
 
 
 <% provide :sidebar_active_item, 'books' %>
+<% provide :page_title_text, '我的記帳本' %>
+<% provide :page_title_icon, 'book' %>
 
-<i class="heart circular icon link" data-content="Hello, I am a pop-up."></i>
+<!-- <i class="emmo-popup heart circular icon link" title="Hello, I am a pop-up."></i> -->
+
 <table class="ui padded table segment ">
   <thead>
     <tr>
@@ -13,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr class="emmo-popup" title="記錄人：Honda">
       <td>2013-12-11 (三)</td>
       <td>No Name Specified</td>
       <td>Unknown</td>
@@ -38,4 +41,90 @@
       <td>None</td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        
+      </th>
+    </tr>
+  </tfoot>
 </table>
+
+<div id="emmo-add-record-button" class="ui green small labeled icon button "><i class="plus icon"></i> 加入資料</div>
+
+
+<div class="ui styled sidebar emmo-web-sidebar">
+  <i class="close icon emmo-right-icon"></i>
+  <!--
+  <h3 class="ui header">You Might Like</h3>
+  <div class="ui fluid vertical menu">
+    <a class="item">
+      <i class="chat outline icon"></i>
+      More by this author
+    </a>
+    <a class="item">
+      <i class="text file icon"></i>
+      Suggested Articles
+    </a>
+  </div>
+  -->
+  <h3 class="ui header">新增一筆資料</h3>
+  <div class="ui form">
+    <div class="field">
+      
+      <label>時間</label>
+      <!--
+      <div class="ui icon input">
+        <i class="time icon"></i>
+        <input type="text" placeholder="">
+      </div>
+      -->
+
+      <div class="ui selection fluid dropdown">
+        <input type="hidden" name="gender">
+        <i class="time icon"></i>
+        <div class="text">Female</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item" data-value="1">Male</div>
+          <div class="item active" data-value="0">Female</div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>金額</label>
+      <div class="ui left icon input">
+        <i class="dollar icon"></i>
+        <input type="text" placeholder="">
+      </div>
+    </div>
+    <div class="field">
+      <label>分類</label>
+      <div class="ui left icon input">
+        <i class="tag icon"></i>
+        <input type="text" placeholder="">
+      </div>
+    </div>
+    <div class="field">
+      <label>事項</label>
+      <textarea></textarea>
+    </div>
+    <div class="ui black fluid button">加入</div>
+  </div>
+</div>
+
+
+<script>
+$(function(){
+  $('.emmo-web-sidebar')
+    .sidebar({
+      //overlay: true
+    })
+    .sidebar('attach events', '#emmo-add-record-button')
+  $('.emmo-web-sidebar .close.icon').click(function(){
+    $('.emmo-web-sidebar').sidebar('hide');
+  });
+    //.sidebar('attach events', 'body')
+
+});
+</script>

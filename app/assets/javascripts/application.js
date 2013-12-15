@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require semantic-ui/javascript/semantic.min
 //= require_tree .
+
+
+$(function(){
+
+  $('.emmo-popup').popup({
+    transition: 'vertical flip',
+    position: 'right center',
+    variation: 'inverted'
+  });
+
+});

@@ -15,7 +15,7 @@
 </head>
 <body class="emmo-brushed-bg">
 
-<% render "layouts/topbar" %>
+<% #render "layouts/topbar" %>
 
 
 <div class="emmo-container ">
@@ -61,9 +61,9 @@
         <div class=" emmo-main">
           
 
-          <h2 class="ui header red">
-            <i class="magic icon"></i>
-            <%= yield :page_title %>
+          <h2 class="ui dividing header large">
+            <i class="<%= yield :page_title_icon  %> icon"></i>
+            <%= yield :page_title_text  %>
           </h2>
 
           <%= yield %>
@@ -72,6 +72,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 
 
 </body>

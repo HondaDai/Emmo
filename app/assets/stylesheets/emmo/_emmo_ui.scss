@@ -12,6 +12,27 @@ $light-brown: #B89B78;
   padding: .8em .7em !important;
 }*/
 
+.emmo-right-icon {
+  position: absolute;
+  right: 0px;
+  display: block;
+  cursor: pointer;
+  opacity: .5;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+
+  -webkit-transition: opacity .1s linear;
+  transition: opacity .1s linear;
+  -webkit-transition: -webkit-transform .1s linear;
+  transition: transform .1s linear;
+
+  &:hover {
+    opacity: 1;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
 
 .emmo-brushed-bg {
   background-image: image-url("brushed.png");
