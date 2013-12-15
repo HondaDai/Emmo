@@ -4,9 +4,7 @@
   <title>Emmo</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-
   <%= csrf_meta_tags %>
-
   <%= favicon_link_tag 'fav.ico' %>
 
   <!--[if lt IE 9]>
@@ -15,27 +13,53 @@
 
 
 </head>
-<body>
+<body class="emmo-brushed-bg">
 
-<% content_for :hide_topbar do %>
-  <%= render "layouts/topbar" %>
-<% end %>
+<% render "layouts/topbar" %>
 
-<% content_for :hide_header_segment do %>
-  <div class="ui segment emmo-header-segment">
-    <div class="emmo-container">
-      <h2 class="ui header"><%= yield :page_title %></h2>
-    </div>
+
+
+<div class="emmo-header-segment ">
+  <div class="emmo-container">
+    <h2 class="ui header">
+      <i class="circular magic icon"></i>
+      Emmo - Let's account!
+    </h2>
   </div>
-<% end %>
+</div>
 
 <div class="emmo-container">
-  <div class="pure-g-r">
-    <div class="pure-u-1-5">
-            <p>Thirds</p></div>
-    <div class="pure-u-4-5">
-      <div class="ui segment">
-        <%= yield %>
+  <div class="pure-g-r ui piled segment">
+    <div class="pure-u-1-4">
+        
+      <div class="emmo-box emmo-sidebar"> 
+        <div class="ui secondary vertical pointing menu" style="width: 100%">
+          <a class=" item purple">
+            <i class="book icon"></i> 帳本
+          </a>
+          <a class="active item red">
+            <i class="user icon"></i> 好友
+          </a>
+          <a class="item blue">
+            <i class="mail icon"></i> 通知
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="pure-u-3-4">
+      <div class="emmo-box">
+        <div class=" emmo-main">
+          
+
+          <h2 class="ui header red">
+            <i class="magic icon"></i>
+            <%= yield :page_title %>
+          </h2>
+
+          <%= yield %>
+        </div>
       </div>
     </div>
   </div>
