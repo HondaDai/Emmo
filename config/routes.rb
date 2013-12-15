@@ -8,6 +8,7 @@ Emmo::Application.routes.draw do
   get  "register" => "users#new"
   get  "home"     => "static_pages#home"
 
+  delete "sessions" => "sessions#destroy"
 
   root "sessions#new"
 

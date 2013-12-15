@@ -22,12 +22,20 @@
   <div class="ui text menu emmo-float-right">
 
     <a class="active item">
-      <i class="user icon"></i> Honda
-    </a>
-    <a class="item">
-      <i class="forward mail icon"></i> 登出
+      <i class="user icon"></i> <%= current_user.name %>
     </a>
 
+    <%# form_for(:session, url: session_path, :method => :delete) do |f| %>
+    <a class="item">
+      
+      <%# f.button_to "登出", :method => 'delete' %>
+      <div class="ui input">
+
+        <!-- <i class="forward mail icon"></i>  -->
+        <%= button_to "登出", sessions_path, class: '', method: 'delete'   %>
+      </div>
+    </a>
+    <% #end %>
   </div>
 </div>
 
