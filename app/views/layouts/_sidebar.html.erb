@@ -1,0 +1,22 @@
+
+
+<script>
+$(function(){
+  var sidebar_active_item = '<%= yield :sidebar_active_item %>';
+  $('#sidebar-'+sidebar_active_item).addClass('active');
+});
+</script>
+
+<div class="emmo-box emmo-sidebar"> 
+  <div class="ui secondary vertical pointing menu" style="width: 100%">
+    <a id="sidebar-books" class="item purple">
+      <i class="book icon"></i> 帳本
+    </a>
+    <a id="sidebar-friends" class="item red">
+      <i class="star icon"></i> 好友
+    </a>
+    <a id="sidebar-notices" class="item blue">
+      <i class="mail icon"></i> 通知
+    </a>
+  </div>
+</div>
