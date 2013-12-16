@@ -71,19 +71,24 @@
   <h3 class="ui header">新增一筆資料</h3>
   <div class="ui form">
     <div class="field">
-      
       <label>時間</label>
-      <!--
-      <div class="ui icon input">
-        <i class="time icon"></i>
-        <input type="text" placeholder="">
-      </div>
-      -->
-
       <div class="ui selection fluid dropdown">
         <input type="hidden" name="gender">
         <i class="time icon"></i>
-        <div class="text">Female</div>
+        <div class="text"></div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item" data-value="1">Male</div>
+          <div class="item active" data-value="0">AA</div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>付款人</label>
+      <div class="ui selection fluid dropdown">
+        <input type="hidden" name="gender">
+        <i class="male icon"></i>
+        <div class="text"></div>
         <i class="dropdown icon"></i>
         <div class="menu">
           <div class="item" data-value="1">Male</div>
@@ -92,19 +97,33 @@
       </div>
     </div>
     <div class="field">
+      <label>分類</label>
+      <div class="ui selection fluid dropdown">
+        <input type="hidden" name="gender">
+        <i class="tag icon"></i>
+        <div class="text"></div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item" data-value="1">Male</div>
+          <div class="item active" data-value="0">Female</div>
+        </div>
+      </div>
+      <!--
+      <div class="ui input">
+        <input placeholder="沒有適合的嗎？ 自己輸入一個吧！" />
+      </div>
+      -->
+    </div>
+
+    <div class="field">
       <label>金額</label>
       <div class="ui left icon input">
         <i class="dollar icon"></i>
         <input type="text" placeholder="">
       </div>
     </div>
-    <div class="field">
-      <label>分類</label>
-      <div class="ui left icon input">
-        <i class="tag icon"></i>
-        <input type="text" placeholder="">
-      </div>
-    </div>
+
+
     <div class="field">
       <label>事項</label>
       <textarea></textarea>
@@ -124,6 +143,12 @@ $(function(){
   $('.emmo-web-sidebar .close.icon').click(function(){
     $('.emmo-web-sidebar').sidebar('hide');
   });
+
+  $('.ui.dropdown').dropdown({
+    //on: 'hover'
+  });
+
+
     //.sidebar('attach events', 'body')
 
 });
