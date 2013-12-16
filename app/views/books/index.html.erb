@@ -6,13 +6,12 @@
 
 <!-- <i class="emmo-popup heart circular icon link" title="Hello, I am a pop-up."></i> -->
 
-<table class="ui padded table segment ">
+<table class="ui padded table segment " id="bookRecordTable">
   <thead>
     <tr>
       <th>時間</th>
-      <th>事項</th>
       <th>金額</th>
-      <th>記錄人</th>
+      <th>事項</th>
     </tr>
   </thead>
   <tbody>
@@ -20,27 +19,24 @@
       <td>2013-12-11 (三)</td>
       <td>No Name Specified</td>
       <td>Unknown</td>
-      <td>None</td>
     </tr>
     <tr>
       <td>2013-12-11 (三)</td>
       <td>Jimmy</td>
       <td> Approved</td>
-      <td>None</td>
     </tr>
     <tr>
       <td>2013-12-11 (三)</td>
       <td>Jamie</td>
       <td>Unknown</td>
-      <td>Requires call</td>
     </tr>
     <tr>
       <td>2013-12-11 (三)</td>
       <td>Jill</td>
       <td>Unknown</td>
-      <td>None</td>
     </tr>
   </tbody>
+  <!--
   <tfoot>
     <tr>
       <th colspan="4">
@@ -48,12 +44,13 @@
       </th>
     </tr>
   </tfoot>
+  -->
 </table>
 
-<div id="emmo-add-record-button" class="ui green small labeled icon button "><i class="plus icon"></i> 加入資料</div>
+<div id="emmo-add-record-button" class="ui teal small labeled icon button "><i class="plus icon"></i> 加入資料</div>
 
 
-<div class="ui styled sidebar emmo-web-sidebar">
+<div class="ui styled wide sidebar emmo-web-sidebar ">
   <i class="close icon emmo-right-icon"></i>
   <!--
   <h3 class="ui header">You Might Like</h3>
@@ -70,7 +67,7 @@
   -->
   <h3 class="ui header">新增一筆資料</h3>
   <div class="ui form">
-    <div class="field">
+    <div class="field" id="emmo-record-time">
       <label>時間</label>
       <div class="ui selection fluid dropdown">
         <input type="hidden" name="gender">
@@ -119,7 +116,7 @@
       <label>金額</label>
       <div class="ui left icon input">
         <i class="dollar icon"></i>
-        <input type="text" placeholder="">
+        <input type="text" placeholder="" class="datepicker">
       </div>
     </div>
 
@@ -134,6 +131,57 @@
 
 
 <script>
+
+
+
+fakeDatas = function(n) {
+  var a = []
+  while(n-- >0)
+    a.push({
+      time: moment().add('day', -parseInt(Math.random()*30)).format("YYYY-MM-DD (dd)"),
+      money: parseInt(Math.random()*300),
+      recorder: Math.random()>0.5?"Honda":"Sanae",
+      note: Math.random()>0.5?"[早餐] 豆漿+漢堡":"[午餐] 麥當勞",
+      payer: Math.random()>0.5?"Honda":"Sanae",
+      owner: Math.random()>0.5?"Honda":"Sanae"
+    })
+  return a;
+}
+
+window.createRecordTable = function(){
+  data = fakeDatas(10);
+  user = "Honda";
+  
+  var trs = data.map(function(item){
+
+    var status = "";
+    var popup = "<a class='item'><div class='ui horizontal label'>記錄人："+item.recorder+"</div></a>";
+    if(window.current_user == item.owner && item.owner != item.payer) {
+      status = "negative";
+      popup += "<a class='item'><div class='ui red horizontal label'>債權人："+item.payer+"</div></a>";
+    }
+    else if(window.current_user == item.payer && item.owner != item.payer) {
+      status = "positive"
+      popup += "<a class='item'><div class='ui green horizontal label'>債務人："+item.owner+"</div></a>";
+    }
+
+    popup = "<div class='ui divided selection list'>"+popup+"</div>";
+    
+
+    var tr = 
+      "<tr data-html=\""+popup+"\" class='"+status+" emmo-popup'>"+
+        "<td>"+item.time+"</td>"+
+        "<td>"+item.money+"</money>"+
+        "<td>"+item.note+"</td>"+
+      "</tr>";
+    return tr;
+  });
+  console.log(trs)
+  $("#bookRecordTable tbody").html(trs.join(''));
+  activeEmmoPopup();
+
+}
+
 $(function(){
   $('.emmo-web-sidebar')
     .sidebar({
@@ -144,10 +192,29 @@ $(function(){
     $('.emmo-web-sidebar').sidebar('hide');
   });
 
+  
+  createRecordTable();
+
+  $("#emmo-record-time>.dropdown>.menu").each(function(){
+    var m = moment()
+    var items = ""
+
+    for(var i=0;i<60;i++) {
+      //active = (i==0)?"active":"";
+      items += '<div class="item " data-value="'+m.format("YYYY-MM-DD")+'">'+m.format("YYYY-MM-DD (dd)")+'</div>'
+      m.add('day', -1);
+    }
+    //window.a=items;
+    //$(items).find(".item:first").addClass("active").html()
+    $(this).html(items);
+
+  });
+
   $('.ui.dropdown').dropdown({
     //on: 'hover'
   });
-
+  
+  $("#emmo-record-time>.dropdown").dropdown("set selected", moment().format("YYYY-MM-DD (dd)"))
 
     //.sidebar('attach events', 'body')
 

@@ -33,6 +33,12 @@ $light-brown: #B89B78;
   }
 }
 
+.emmo-web-sidebar {
+  //width: 300px!important;
+  //margin-left: -300px!important;
+  box-shadow: 0 0 5px !important;
+}
+
 
 .emmo-brushed-bg {
   background-image: image-url("brushed.png");

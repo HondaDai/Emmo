@@ -15,15 +15,24 @@
 //= require turbolinks
 // require semantic-ui/javascript/semantic.min
 //= require semantic-ui/javascript/semantic
+//= require moment.min
+//= require moment.zh-tw
+//= require datepicker/js/bootstrap-datepicker
 //= require_tree .
 
 
 $(function(){
 
+  activeEmmoPopup();
+
+});
+
+window.activeEmmoPopup = function(){
   $('.emmo-popup').popup({
     transition: 'vertical flip',
     position: 'right center',
     variation: 'inverted'
   });
+}
 
-});
+
