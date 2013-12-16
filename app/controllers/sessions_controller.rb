@@ -5,7 +5,9 @@ class SessionsController < ApplicationController
   
 
   def new
-
+    if signed_in?
+      redirect_to home_path
+    end
   end
 
 
