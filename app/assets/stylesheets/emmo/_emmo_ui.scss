@@ -33,6 +33,18 @@ $light-brown: #B89B78;
   }
 }
 
+.emmo-hover-rotate {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: -webkit-transform .1s linear;
+  transition: transform .1s linear;
+
+  &:hover {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
 .emmo-web-sidebar {
   //width: 300px!important;
   //margin-left: -300px!important;
@@ -42,6 +54,9 @@ $light-brown: #B89B78;
 
 .emmo-brushed-bg {
   background-image: image-url("brushed.png");
+}
+.emmo-sprinkles-bg {
+  background-image: image-url("sprinkles.png");
 }
 
 .emmo-header-segment {
