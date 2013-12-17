@@ -6,7 +6,7 @@
 
 <!-- <i class="emmo-popup heart circular icon link" title="Hello, I am a pop-up."></i> -->
 
-<table class="ui padded table segment " id="bookRecordTable">
+<table class="ui padded basic table segment " id="bookRecordTable">
   <thead>
     <tr>
       <th>時間</th>
@@ -82,6 +82,19 @@
     </div>
     <div class="field">
       <label>付款人</label>
+      <div class="ui selection fluid dropdown">
+        <input type="hidden" name="gender">
+        <i class="cart icon"></i>
+        <div class="text"></div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item" data-value="1">Honda</div>
+          <div class="item active" data-value="0">Sanae</div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>幫誰付</label>
       <div class="ui selection fluid dropdown">
         <input type="hidden" name="gender">
         <i class="male icon"></i>
@@ -173,6 +186,7 @@ window.createRecordTable = function(){
         "<td>"+item.time+"</td>"+
         "<td>"+item.money+"</money>"+
         "<td>"+item.note+"</td>"+
+        "<td><i class=\"close icon\"></i></td>"+
       "</tr>";
     return tr;
   });
