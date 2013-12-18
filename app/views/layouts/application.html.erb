@@ -24,7 +24,9 @@
   <div class="ui text menu emmo-float-right">
 
     <a class="active item">
-      <i class="user icon"></i> <%= current_user.name %>
+      <!-- <i class="user icon"></i> -->
+      <img class="ui avatar image" src="<%= current_user.gravatar_url %>" style="display: inline-block" />
+      <%= current_user.name %>
     </a>
 
     <%# form_for(:session, url: session_path, :method => :delete) do |f| %>
