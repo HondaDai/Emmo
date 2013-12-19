@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     uniqueness: { case_sensitive: false }
   #validates :password_digest
 
-  has_many :records
+  has_many :records, :class_name => "Record", :foreign_key => "owner_id"
 
 
 
