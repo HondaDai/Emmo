@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20131219082227) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "owner_id"
+    t.integer  "payer_id"
+    t.integer  "recorder_id"
   end
 
   create_table "users", force: true do |t|
