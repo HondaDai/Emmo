@@ -12,6 +12,11 @@ $light-brown: #B89B78;
   padding: .8em .7em !important;
 }*/
 
+.emmo-compact-item {
+  height: inherit !important;
+  min-height: inherit !important;
+}
+
 .emmo-right-icon {
   position: absolute;
   right: 0px;
