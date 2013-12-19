@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131219082227) do
+ActiveRecord::Schema.define(version: 20131219104431) do
 
   create_table "records", force: true do |t|
     t.datetime "time"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 20131219082227) do
     t.integer  "payer_id"
     t.integer  "recorder_id"
   end
+
+  add_index "records", ["owner_id", "money"], name: "index_records_on_owner_id_and_money", unique: true
+  add_index "records", ["owner_id", "payer_id"], name: "index_records_on_owner_id_and_payer_id", unique: true
+  add_index "records", ["owner_id", "recorder_id"], name: "index_records_on_owner_id_and_recorder_id", unique: true
+  add_index "records", ["owner_id", "time"], name: "index_records_on_owner_id_and_time", unique: true
 
   create_table "users", force: true do |t|
     t.string   "name"
