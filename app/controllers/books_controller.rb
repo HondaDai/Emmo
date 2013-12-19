@@ -8,7 +8,7 @@ class BooksController < ApplicationController
 
     render :json => Record.new(record_params)
 
-    if false and @record.save
+    if @record.save
       # Handle a successful save.
     else
       #@errors = @record.error_messages

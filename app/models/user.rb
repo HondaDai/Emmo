@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   has_many :pay_records, :class_name => "Record", :foreign_key => "payer_id"
   has_many :rec_records, :class_name => "Record", :foreign_key => "recorder_id"
 
-
+  # http://www.ptt.cc/man/Ruby/D8A0/D23C/DCFC/M.1171361058.A.F08.html
+  has_and_belongs_to_many :friends, :class_name => "User", :join_table => "friendships", :association_foreign_key => "friend_id", :foreign_key => "user_id"
 
   has_secure_password
 
@@ -58,6 +59,14 @@ class User < ActiveRecord::Base
   end
 
 
+  def add_friend(friend)
+    Friendships.be_friends(self, friend)
+  end
+
+  def remove_friend(friend)
+    Friendships.break_off(self, friend)
+  end
+
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
@@ -66,6 +75,7 @@ class User < ActiveRecord::Base
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+
 
   private
     def create_remember_token
